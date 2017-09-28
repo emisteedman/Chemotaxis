@@ -30,10 +30,17 @@ class Walker
         walk();
       }
       void walk() {
-        myX = myX + (int)(Math.random()*9)+5;
-        myY = myY + (int)(Math.random()*9)-9;
+        myX = myX + (int)(Math.random()*9)-2;
+        myY = myY + (int)(Math.random()*9)-7;
+        if (myX > 500){
+          myX = mouseX;
+          myX = myX + (int)(Math.random()*4)-5;
         }
-      
+        if (myY < 0){
+          myY = mouseY;
+          myY = myY + (int)(Math.random()*4)+7;
+        }
+      }
       void show() {
         fill((int)(Math.random()*256), 0, (int)(Math.random()*256));
         noStroke();
